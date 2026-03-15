@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Atryx Awareness Program</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#f6f8fb;
+color:#1a1a1a;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+text-align:center;
+}
+
+.hero{
+padding:80px 20px;
+background:white;
+}
+
+h1{
+font-size:48px;
+margin-bottom:10px;
+}
+
+.subtitle{
+font-size:20px;
+color:#666;
+max-width:700px;
+margin:auto;
+}
+
+.cta{
+margin-top:40px;
+}
+
+button{
+background:#0070ba;
+color:white;
+border:none;
+padding:16px 30px;
+font-size:18px;
+border-radius:8px;
+cursor:pointer;
+}
+
+button:hover{
+opacity:0.9;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:60px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.pricing{
+background:white;
+padding:60px 20px;
+margin-top:60px;
+}
+
+.price{
+font-size:36px;
+margin:20px 0;
+}
+
+input{
+padding:12px;
+font-size:18px;
+width:200px;
+text-align:center;
+margin-top:10px;
+}
+
+.total{
+font-size:28px;
+margin-top:20px;
+}
+
+.footer{
+margin-top:80px;
+padding:30px;
+font-size:14px;
+color:#777;
+text-align:center;
+}
+
+</style>
+
+<script>
+
+function calculatePrice(){
+
+let users = document.getElementById("users").value;
+
+let price = users * 14;
+
+document.getElementById("total").innerHTML =
+"$" + price + " / month";
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="container">
+
+<h1>Atryx Awareness Program</h1>
+
+<p class="subtitle">
+Cybersecurity awareness training for companies.
+Protect your employees from phishing, social engineering and human-based cyber attacks.
+</p>
+
+<div class="cta">
+
+<form action="https://www.paypal.com/ncp/payment/YOURPAYPALID" method="post">
+<button>Start Training</button>
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="container">
+
+<h2>Why Companies Use Atryx</h2>
+
+<div class="features">
+
+<div class="card">
+<h3>Phishing Simulation</h3>
+<p>Train employees to detect real phishing attacks before damage happens.</p>
+</div>
+
+<div class="card">
+<h3>Microlearning Modules</h3>
+<p>Short security lessons employees can finish in under 5 minutes.</p>
+</div>
+
+<div class="card">
+<h3>Admin Dashboard</h3>
+<p>Track employee risk levels and security awareness progress.</p>
+</div>
+
+<div class="card">
+<h3>Reduce Human Risk</h3>
+<p>Over 80% of breaches start with human error.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="pricing">
+
+<div class="container">
+
+<h2>Simple Pricing</h2>
+
+<p>$14 per user / month</p>
+
+<h3>Estimate your company cost</h3>
+
+<input
+id="users"
+type="number"
+placeholder="Employees"
+oninput="calculatePrice()"
+/>
+
+<div class="total" id="total">$0 / month</div>
+
+<br><br>
+
+<form action="https://www.paypal.com/ncp/payment/YOURPAYPALID" method="post">
+<button>Start Company Subscription</button>
+</form>
+
+</div>
+
+</section>
+
+<div class="footer">
+
+© 2026 Atryx Awareness Program  
+Cybersecurity awareness training for companies.
+
+</div>
+
+</body>
+</html>
