@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Atryx Awareness Program</title>
+<title>Atryx Аюулгүй байдлын Мэдлэгийн Хөтөлбөр</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,7 +15,7 @@ color:#1a1a1a;
 }
 
 .container{
-max-width:1000px;
+max-width:1100px;
 margin:auto;
 padding:40px 20px;
 text-align:center;
@@ -27,101 +27,93 @@ background:white;
 }
 
 h1{
-font-size:42px;
+font-size:48px;
+margin-bottom:10px;
 }
 
 .subtitle{
+font-size:20px;
 color:#666;
-font-size:18px;
-max-width:600px;
+max-width:700px;
 margin:auto;
+}
+
+.cta{
+margin-top:40px;
 }
 
 button{
 background:#0070ba;
 color:white;
-padding:15px 25px;
 border:none;
+padding:16px 30px;
+font-size:18px;
 border-radius:8px;
-font-size:16px;
 cursor:pointer;
-margin-top:20px;
 }
 
-.section{
+button:hover{
+opacity:0.9;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 margin-top:60px;
 }
 
-.form-box{
+.card{
 background:white;
 padding:30px;
 border-radius:10px;
 box-shadow:0 5px 20px rgba(0,0,0,0.05);
-max-width:500px;
-margin:auto;
+}
+
+.pricing{
+background:white;
+padding:60px 20px;
+margin-top:60px;
+}
+
+.price{
+font-size:36px;
+margin:20px 0;
 }
 
 input{
-width:100%;
 padding:12px;
-margin:10px 0;
-font-size:16px;
-}
-
-.total{
-font-size:20px;
+font-size:18px;
+width:200px;
+text-align:center;
 margin-top:10px;
 }
 
-.hidden{
-display:none;
+.total{
+font-size:28px;
+margin-top:20px;
 }
 
-.success{
-background:white;
-padding:40px;
-border-radius:10px;
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
+.footer{
+margin-top:80px;
+padding:30px;
+font-size:14px;
+color:#777;
+text-align:center;
 }
 
 </style>
 
 <script>
 
-function showOrder(){
-document.getElementById("order").classList.remove("hidden");
-window.scrollTo(0,document.body.scrollHeight);
-}
-
 function calculatePrice(){
-let seats = document.getElementById("seats").value || 0;
-let total = seats * 14;
+
+let users = document.getElementById("users").value;
+
+let price = users * 15;
+
 document.getElementById("total").innerHTML =
-"Total: $" + total + " / month";
-}
-
-function submitForm(){
-
-let company = document.getElementById("company").value;
-let name = document.getElementById("name").value;
-let email = document.getElementById("email").value;
-let seats = document.getElementById("seats").value;
-let total = seats * 14;
-
-let subject = "Atryx Order Request";
-
-let body =
-"Company: " + company + "%0D%0A" +
-"Name: " + name + "%0D%0A" +
-"Email: " + email + "%0D%0A" +
-"Seats: " + seats + "%0D%0A" +
-"Total: $" + total + " / month";
-
-window.location.href =
-"mailto:your@email.com?subject=" + subject + "&body=" + body;
-
-document.getElementById("order").classList.add("hidden");
-document.getElementById("success").classList.remove("hidden");
+"$" + price + " / сар";
 
 }
 
@@ -131,74 +123,93 @@ document.getElementById("success").classList.remove("hidden");
 
 <body>
 
-<!-- HERO -->
 <section class="hero">
 
 <div class="container">
 
-<h1>Atryx Awareness Program</h1>
+<h1>Atryx Аюулгүй Байдлын Мэдлэгийн Хөтөлбөр</h1>
 
 <p class="subtitle">
-Cybersecurity awareness training for companies.
-Protect employees from phishing and social engineering attacks.
+Компаниудад зориулсан кибер аюулгүй байдлын сургалт.
+Фишинг, сошиал инженерчлэл болон хүний алдаанаас үүдэлтэй кибер халдлагаас ажилтнуудаа хамгаалаарай.
 </p>
 
-<p><strong>$14 / user / month</strong></p>
+<div class="cta">
 
-<button onclick="showOrder()">
-Start Company Training
-</button>
+<form action="thank-you.html" method="post">
+<button>Сургалтыг эхлүүлэх</button>
+</form>
+
+</div>
 
 </div>
 
 </section>
 
-<!-- FEATURES -->
-<section class="container section">
+<section class="container">
 
-<h2>Why Companies Use Atryx</h2>
+<h2>Яагаад компаниуд Atryx-ийг сонгодог вэ?</h2>
 
-<p>Phishing simulation • Microlearning • Admin dashboard • Risk reduction</p>
+<div class="features">
 
-</section>
+<div class="card">
+<h3>Фишинг халдлагын симуляци</h3>
+<p>Ажилтнуудад бодит фишинг халдлагыг таних чадварыг сургана.</p>
+</div>
 
-<!-- ORDER FORM -->
-<section id="order" class="section hidden">
+<div class="card">
+<h3>Богино сургалтын модуль</h3>
+<p>5 минутаас бага хугацаанд дуусгах боломжтой аюулгүй байдлын сургалт.</p>
+</div>
 
-<div class="form-box">
+<div class="card">
+<h3>Админ хяналтын самбар</h3>
+<p>Ажилтнуудын аюулгүй байдлын мэдлэг болон эрсдэлийг хянах боломжтой.</p>
+</div>
 
-<h2>Request Subscription</h2>
-
-<input id="company" placeholder="Company Name">
-<input id="name" placeholder="Your Name">
-<input id="email" type="email" placeholder="Business Email">
-
-<input id="seats" type="number" placeholder="Number of Seats" oninput="calculatePrice()">
-
-<div class="total" id="total">Total: $0 / month</div>
-
-<button onclick="submitForm()">
-Submit Request
-</button>
+<div class="card">
+<h3>Хүний эрсдэлийг бууруулах</h3>
+<p>Кибер халдлагын 80%-иас илүү нь хүний алдаанаас үүдэлтэй.</p>
+</div>
 
 </div>
 
 </section>
 
-<!-- SUCCESS -->
-<section id="success" class="section hidden">
+<section class="pricing">
 
-<div class="container success">
+<div class="container">
 
-<h2>Thank You!</h2>
+<h2>Энгийн үнэ</h2>
 
-<p>
-Your request has been sent. We will contact you shortly.
-</p>
+<p>$15 / хэрэглэгч / сар</p>
+
+<h3>Компанийн зардлыг тооцоолох</h3>
+
+<input
+id="users"
+type="number"
+placeholder="Ажилтны тоо"
+oninput="calculatePrice()"
+/>
+
+<div class="total" id="total">$0 / сар</div>
+
+<br><br>
+
+<form action="https://www.paypal.com/ncp/payment/NLRBRPXCR4PS6" method="post">
+<button>Компанийн захиалга эхлүүлэх</button>
+</form>
 
 </div>
 
 </section>
+
+<div class="footer">
+
+© 2026 Atryx Аюулгүй Байдлын Мэдлэгийн Хөтөлбөр
+
+</div>
 
 </body>
 </html>
