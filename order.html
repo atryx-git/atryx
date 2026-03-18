@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Atryx Order</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body{
+font-family:Arial;
+background:#f6f8fb;
+margin:0;
+}
+
+.container{
+max-width:600px;
+margin:60px auto;
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+h1{
+text-align:center;
+}
+
+input, textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:15px;
+background:#0070ba;
+color:white;
+border:none;
+font-size:18px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.total{
+font-size:20px;
+margin-top:10px;
+text-align:center;
+}
+
+</style>
+
+<script>
+
+function calculatePrice(){
+let seats = document.getElementById("seats").value || 0;
+let total = seats * 14;
+document.getElementById("total").innerHTML =
+"Total: $" + total + " / month";
+}
+
+function sendEmail(){
+
+let company = document.getElementById("company").value;
+let name = document.getElementById("name").value;
+let email = document.getElementById("email").value;
+let seats = document.getElementById("seats").value;
+let total = seats * 14;
+
+let subject = "Atryx Order Request";
+
+let body =
+"Company: " + company + "%0D%0A" +
+"Name: " + name + "%0D%0A" +
+"Email: " + email + "%0D%0A" +
+"Seats: " + seats + "%0D%0A" +
+"Total: $" + total + " / month";
+
+window.location.href =
+"mailto:your@email.com?subject=" + subject + "&body=" + body;
+
+setTimeout(function(){
+window.location.href = "thank-you.html";
+}, 1000);
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Request Atryx Subscription</h1>
+
+<p style="text-align:center;">
+$14 per user / month
+</p>
+
+<input id="company" placeholder="Company Name" required>
+<input id="name" placeholder="Your Name" required>
+<input id="email" type="email" placeholder="Business Email" required>
+
+<input id="seats" type="number" placeholder="Number of Seats" oninput="calculatePrice()" required>
+
+<div class="total" id="total">Total: $0 / month</div>
+
+<br>
+
+<button onclick="sendEmail()">
+Submit Order Request
+</button>
+
+</div>
+
+</body>
+</html>
